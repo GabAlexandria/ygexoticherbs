@@ -1,7 +1,23 @@
 Ygexoticherbs::Application.routes.draw do
+  resources :admins
+
+
+  namespace :admin do
+    resources :products
+  end
+
+
+  resources :products, :only => [:index, :show]
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
   root :to => "pages#welcome"
+  get "/home" => "pages#welcome", :as => "welcome"
+  
+  get "/contact-us" => "pages#contact_us", :as => "contact_us"
+
+  get "/about-us" => "pages#about_us", :as => "about_us"
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

@@ -4,6 +4,7 @@ gem 'rails', '3.2.9'
 gem 'haml'
 gem 'pry-rails'
 gem 'formtastic', '~> 1.2.4'
+gem 'mailcatcher'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -20,6 +21,10 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.0"
 end
 
 gem 'jquery-rails'
