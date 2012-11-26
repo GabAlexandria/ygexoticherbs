@@ -1,0 +1,28 @@
+body {
+  background-image: image-url("background.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  div.navbar {
+    ul {
+      li {
+        border-style: solid;
+        color: green;
+        list-style-type: none;
+        display: inline;
+        margin-right: 10px;
+        padding: 10px 20px 10px 20px;
+        font-size: 20px;
+        a {
+          color: green;
+          &:visited { color: green; }
+        }
+      }
+    }
+  }
+  hr {
+    float: left;
+    width: 1000px;
+  }
+}
