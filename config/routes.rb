@@ -1,12 +1,12 @@
 Ygexoticherbs::Application.routes.draw do
-  resources :admins
-
 
   namespace :admin do
     resources :products
+    resources :users
   end
 
-
+  resources :users, :only => [:new, :edit, :create, :update]
+  resources :user_sessions
   resources :products, :only => [:index, :show]
 
 
@@ -18,6 +18,8 @@ Ygexoticherbs::Application.routes.draw do
   get "/contact-us" => "pages#contact_us", :as => "contact_us"
 
   get "/about-us" => "pages#about_us", :as => "about_us"
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

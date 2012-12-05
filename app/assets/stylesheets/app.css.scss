@@ -1,4 +1,5 @@
 body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
   background-image: image-url("background.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -22,7 +23,7 @@ body {
     }
   }
   hr {
-    float: left;
-    width: 1000px;
+    margin-left: 40px;
+    width: 900px;
   }
 }

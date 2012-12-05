@@ -5,6 +5,9 @@ gem 'haml'
 gem 'pry-rails'
 gem 'formtastic', '~> 1.2.4'
 gem 'mailcatcher'
+gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'authlogic'
+gem 'dynamic_form'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

@@ -9,6 +9,7 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :quantity, :default => 0, :null => false
       t.string :packaging_type
       t.boolean :available, :default => true, :null => false
+      t.boolean :picture
       t.timestamps
     end
   end
