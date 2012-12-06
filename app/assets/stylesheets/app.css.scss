@@ -1,11 +1,10 @@
 body {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  background-image: image-url("background.png");
+  background: url("background.png") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-repeat: no-repeat;
   div.navbar {
     ul {
       li {
