@@ -5,6 +5,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-repeat: no-repeat;
   div.navbar {
     ul {
       li {
@@ -15,15 +16,17 @@ body {
         margin-right: 10px;
         padding: 10px 20px 10px 20px;
         font-size: 20px;
-        a {
-          color: green;
-          &:visited { color: green; }
-        }
       }
     }
   }
   hr {
     margin-left: 40px;
     width: 900px;
+    margin-top: 20px;
+  }
+  a {
+    color: green;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
   }
 }

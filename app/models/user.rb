@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   acts_as_authentic
 
-  attr_accessible :username
-                  :email
-                  :password
+  attr_accessible :username,
+                  :email,
+                  :password,
                   :password_confirmation
 
   validates_uniqueness_of :username, :message => "This username is taken. Please use another"

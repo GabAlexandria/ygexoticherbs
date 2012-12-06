@@ -1,0 +1,10 @@
+%section
+  %h1= "Edit User"
+
+  = semantic_form_for @user, :url => {:action => :update} do |f|
+    = f.error_messages
+  
+    = render :partial => "form", :locals => {:user => @user, :f => f}
+
+    = f.buttons do
+      = f.commit_button "Update"

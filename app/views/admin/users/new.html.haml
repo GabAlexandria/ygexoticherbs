@@ -1,0 +1,9 @@
+%section
+  %h1= "Create new user"
+  
+  = semantic_form_for @user, :url => {:action => :create} do |f|
+    = f.error_messages
+    = render :partial => "form", :locals => {:user => @user, :f => f}
+
+    = f.buttons do
+      = f.commit_button "Create"

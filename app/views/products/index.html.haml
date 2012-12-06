@@ -1,3 +1,7 @@
 %section
-   %h1="Our Products"
+  %h1="Our Products"
+
+  - if @products.present?
+    - @products.each do |product|
+      = render :partial => "product_summary", :locals => {:product => product}
 

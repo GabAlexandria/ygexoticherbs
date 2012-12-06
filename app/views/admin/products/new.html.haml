@@ -1,0 +1,9 @@
+%section
+  %h1= "Create a new product"
+
+  = semantic_form_for @product, :url => {:action => :create} do |f|
+    = f.error_messages  
+    = render :partial => "form", :locals => {:product => @product, :f => f}
+
+    = f.buttons do
+      = f.commit_button "Create"

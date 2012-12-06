@@ -1,1 +1,25 @@
-%h1="Product"
+%section
+
+  .full-product
+    %h1= "Information on #{@product.name}"
+    .info
+      = image_tag("coming-soon-full.png", :alt => "Picture coming soon")
+
+      %div.overview
+        %b= "Name:"
+        #{@product.name}
+        %br
+        - unless @product.scientific_name.blank?
+          %b= "Scientific Name:"
+          #{@product.scientific_name}
+          %br
+        %b= "Price:"
+        = "$#{@product.price}"
+        %br
+        %b= "Package Type:" 
+        #{@product.packaging_type}
+        %br
+        %b= @product.in_stock ? "In Stock" : "Out of Stock"
+    .description
+      %h3= "Description:"
+      = @product.description

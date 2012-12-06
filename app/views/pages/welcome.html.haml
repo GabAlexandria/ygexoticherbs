@@ -1,7 +1,11 @@
 %section
   .welcome
-    %h2.heading= "Welcome to YG Exotic Herbs and Spices!"
+    %h1.heading= "Welcome to YG Exotic Herbs and Spices!"
 
-    %h4= "Check out our most popular products below or click on the Products tab above to see a complete list."
+    %h4= "Check out some of our products below or click on the Products tab above to see a complete list."
+
+    - @preview_products.each do |product|
+      = render :partial => "products/product_summary", :locals => {:product => product} 
+      
  
 

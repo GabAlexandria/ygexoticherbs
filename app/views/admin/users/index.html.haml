@@ -1,0 +1,18 @@
+%section
+  %h1= "All Users"
+
+  = link_to("Create User", new_admin_user_path) 
+
+  - if @users.present?
+    %table
+      %tr
+        %th= "Username"
+        %th= "Email"
+        %th
+      %tr
+        - @users.each do |user|
+          %td= user.username
+          %td= user.email
+          %td= link_to("Edit", edit_admin_user_path(user))
+  - else
+    %p= "There are no users"

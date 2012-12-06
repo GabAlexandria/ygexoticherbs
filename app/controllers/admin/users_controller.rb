@@ -2,31 +2,31 @@ class Admin::UsersController < Admin::BaseController
 
 
   def index
-    @admin_users = Admin::User.all
+    @users = User.all
   end
 
   def show
-    @admin_user = Admin::User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def new
-    @admin_user = Admin::User.new
+    @user = User.new
   end
 
   def edit
-    @admin_user = Admin::User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def create
-    @admin_user = Admin::User.new(params[:admin_user])
+    @user = User.new(params[:admin_user])
   end
 
   def update
-    @admin_user = Admin::User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def destroy
-    @admin_user = Admin::User.find(params[:id])
-    @admin_user.destroy
+    @user = User.find(params[:id])
+    @user.destroy
   end
 end

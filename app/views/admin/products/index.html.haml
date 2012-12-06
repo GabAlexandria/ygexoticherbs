@@ -1,0 +1,15 @@
+%section
+  %h1= "Product list"
+
+  = link_to("Create Product", new_admin_product_path)  
+  %table
+    %tr
+      %th= "Name"
+      %th= "Price"
+      %th
+    - @products.each do |product|
+      %tr
+        %td= product.name
+        %td= product.price
+        %td= link_to("Edit", edit_admin_product_path(product))
+    
