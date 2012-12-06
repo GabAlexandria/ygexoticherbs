@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # attr_accessible :title, :body
-  acts_as_authentic
+  #acts_as_authentic
 
   attr_accessible :username,
                   :email,
@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :email, :message => "An account already exists with this email"
   validates_presence_of :email, :message => "Please provide an email address"
-  validates_format_of :email, :with => Authlogic::Regex.email, :message => "The email provided is not a valid format"
+  #validates_format_of :email, :with => Authlogic::Regex.email, :message => "The email provided is not a valid format"
   validates_length_of :email, :in => 6..100, :message => "The email provided is too short"
 
   validates_presence_of :password, :message => "Please provide a password"
