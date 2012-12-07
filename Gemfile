@@ -7,6 +7,9 @@ gem 'formtastic', '~> 1.2.4'
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'authlogic'
 gem 'dynamic_form'
+gem 'will_paginate', '~> 3.0'
+gem 'newrelic_rpm'
+gem 'sanitize'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -27,6 +30,7 @@ end
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
+  gem 'mailcatcher'
 end
 
 gem 'jquery-rails'
