@@ -6,20 +6,29 @@
       = image_tag("coming-soon-full.png", :alt => "Picture coming soon")
 
       %div.overview
-        %b= "Name:"
+        %b= "Product:"
         #{@product.name}
         %br
         - unless @product.scientific_name.blank?
           %b= "Scientific Name:"
           #{@product.scientific_name}
-          %br
-        %b= "Price:"
-        = "$#{@product.price}"
-        %br
-        %b= "Package Type:" 
-        #{@product.packaging_type}
-        %br
-        %b= @product.in_stock ? "In Stock" : "Out of Stock"
+
     .description
       %h3= "Description:"
       = @product.description
+      %br
+      %br
+      %h3= "This product is available in the following types:"
+      %table{:border => "3"}
+        %tr
+          %th="Name"
+          %th="Packaging Type"
+          %th="Price"
+          %th="Status"
+        - @product.children.each do |prod|
+          %tr
+            %td.name= prod.name
+            %td.packaging= prod.packaging_type
+            %td.price= number_to_currency(prod.price)
+            %td
+              %b= (prod.in_stock ? "In Stock" : "Out of Stock")

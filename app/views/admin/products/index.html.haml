@@ -1,15 +1,23 @@
 %section
   %h1= "Product list"
 
-  = link_to("Create Product", new_admin_product_path)  
-  %table
-    %tr
-      %th= "Name"
-      %th= "Price"
-      %th
-    - @products.each do |product|
+  = link_to("Create Product", new_admin_product_path)
+  - @products.each do |product|
+    %table
       %tr
-        %td= product.name
-        %td= product.price
-        %td= link_to("Edit", edit_admin_product_path(product))
+        %th
+          - sci_name = product.scientific_name.present? ? "(#{product.scientific_name})" : nil
+          ="#{product.name}"
+          = sci_name
+          = link_to("Edit", edit_admin_product_path(product))
+        %th="Name"
+        %th="Price"
+      - product.children.each do |prod|
+        %tr
+          %td
+            = "#{product.scientific_name}"
+            = link_to("Edit", edit_admin_product_path(product))
+          %td= prod.name
+          %td= prod.price
+          %td= link_to("Edit", edit_admin_product_path(prod))
     

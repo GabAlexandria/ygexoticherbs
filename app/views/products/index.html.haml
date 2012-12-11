@@ -2,6 +2,14 @@
   %h1="Our Products"
 
   - if @products.present?
+    .search
+      = form_tag(products_path, :method => 'get') do
+        = text_field_tag :search, params[:search], :placeholder => "Enter Product Name"
+        .button
+          = submit_tag("Search")
+    = will_paginate @products
     - @products.each do |product|
       = render :partial => "product_summary", :locals => {:product => product}
+  - else
+    = "Sorry, there are no results to show"
 
