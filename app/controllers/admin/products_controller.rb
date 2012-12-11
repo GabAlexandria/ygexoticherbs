@@ -1,7 +1,7 @@
 class Admin::ProductsController < Admin::BaseController
 
   def index
-    @products = Product.all
+    @products = Product.roots.all
   end
 
   def show

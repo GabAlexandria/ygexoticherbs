@@ -2,10 +2,15 @@
   %tr.product-info
     %td.coming-soon= image_tag("coming-soon.png", :alt => "Picture coming soon")
     %td
-      %p= "Name: #{product.name}"
-      %p= "Price: $#{product.price}"
-      %p= "Package Type: #{product.packaging_type}"
-      %b= product.in_stock ? "In Stock" : "Out of Stock"
+      %b= "Name:"
+      %br
+      #{product.name}
+      %br
+      %br
+      %b= "Scientific Name:"
+      %br
+      - sci_name = product.scientific_name.present? ? product.scientific_name : "None"
+      #{sci_name}
   %tr.description
     %td{:colspan => 2}
       = "Description: #{product.truncated_descript}"

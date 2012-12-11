@@ -10,6 +10,7 @@ gem 'dynamic_form'
 gem 'will_paginate', '~> 3.0'
 gem 'newrelic_rpm'
 gem 'sanitize'
+gem 'ancestry'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

@@ -1,11 +1,19 @@
 body {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  background: url("background.png") no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  img.bg {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top:0;
+    left: 0;
+  }
+  section {
+    position: relative;
+  }
   div.navbar {
+    position: relative;
     ul {
       li {
         border-style: solid;
@@ -22,6 +30,7 @@ body {
     margin-left: 40px;
     width: 900px;
     margin-top: 20px;
+    position: relative;
   }
   a {
     color: green;

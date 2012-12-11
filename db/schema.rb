@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121204204338) do
+ActiveRecord::Schema.define(:version => 20121210055150) do
 
   create_table "products", :force => true do |t|
     t.string   "name"
     t.string   "slug"
     t.string   "scientific_name"
-    t.integer  "price",           :default => 0,    :null => false
+    t.decimal  "price",           :default => 0.0,  :null => false
     t.text     "description"
     t.boolean  "in_stock",        :default => true, :null => false
     t.integer  "quantity",        :default => 0,    :null => false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20121204204338) do
     t.integer  "ranking",         :default => 0,    :null => false
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
+    t.string   "ancestry"
   end
 
   create_table "users", :force => true do |t|
