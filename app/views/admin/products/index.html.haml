@@ -14,9 +14,6 @@
         %th="Price"
       - product.children.each do |prod|
         %tr
-          %td
-            = "#{product.scientific_name}"
-            = link_to("Edit", edit_admin_product_path(product))
           %td= prod.name
           %td= prod.price
           %td= link_to("Edit", edit_admin_product_path(prod))
