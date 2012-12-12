@@ -75,5 +75,24 @@ Product.create!(:name => "Botanic Curry Powder",
                 :packaging_type => '24oz Bottle',
                 :description => "Spicy and powerful aroma, while flavoring and enhancing a variety of meat, rice, fish and vegetable dishes across all continents.")
 
+oregano_parent = Product.create!(:name => "Oregano",
+                                 :scientific_name => "Oreganum",
+                                 :slug => "oregano",
+                                 :description => "Typically strong aroma warm and sharp with a pleasant taste and used as an enhancer for poultry, meats, salads and Italian dishes, the herb is also sprinkled on pizza, in sauces and beans and is also superb for mixing with other seasonings.")
+
+Product.create!(:name => "Rubbed Oregano",
+                :slug => "rubbed-oregano",
+                :price => 15.5,
+                :quantity => 3,
+                :packaging_type => "1 lb Pack",
+                :parent_id  => oregano_parent.id)
+
+Product.create!(:name => "Rubbed Oregano",
+                :slug => "rubbed-oregano-bulk",
+                :price => 297,
+                :quantity => 1,
+                :packaging_type => "22 lb Pack",
+                :parent_id => oregano_parent.id)
+
 admin = User.create!(:username => "ygadmin", :email => "ygadmin@test.com", :password => "password", :password_confirmation => "password")
 admin.update_attribute(:admin, true)

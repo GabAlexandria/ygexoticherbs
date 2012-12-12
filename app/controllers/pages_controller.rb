@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
 def welcome
-  @preview_products = Product.limit(4)
+  @preview_products = Product.roots.limit(4)
 end
 
 def contact_us

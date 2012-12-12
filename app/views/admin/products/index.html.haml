@@ -1,20 +1,23 @@
 %section
   %h1= "Product list"
 
-  = link_to("Create Product", new_admin_product_path)
-  - @products.each do |product|
-    %table
-      %tr
-        %th
-          - sci_name = product.scientific_name.present? ? "(#{product.scientific_name})" : nil
-          ="#{product.name}"
-          = sci_name
-          = link_to("Edit", edit_admin_product_path(product))
-        %th="Name"
-        %th="Price"
-      - product.children.each do |prod|
+  .index_products
+    = link_to("Create Product", new_admin_product_path)
+    - @products.each do |product|
+      %table{:border => '2'}
         %tr
-          %td= prod.name
-          %td= prod.price
-          %td= link_to("Edit", edit_admin_product_path(prod))
+          %th.parent
+            - sci_name = product.scientific_name.present? ? "(#{product.scientific_name})" : nil
+            ="#{product.name}"
+            = sci_name
+            = link_to("Edit", edit_admin_product_path(product))
+          %th.name="Name"
+          %th.price="Price"
+          %th.action="Actions"
+        - product.children.each do |prod|
+          %tr
+            %td.parent
+            %td.name= prod.name
+            %td.price= number_to_currency(prod.price)
+            %td.action= link_to("Edit", edit_admin_product_path(prod))
     

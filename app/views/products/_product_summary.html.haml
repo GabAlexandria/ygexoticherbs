@@ -13,7 +13,7 @@
       #{sci_name}
   %tr.description
     %td{:colspan => 2}
-      = "Description: #{product.truncated_descript}"
+      != "#{product.truncated_descript}"
       %br
       = link_to "Click here to see more", product_path(product)
 

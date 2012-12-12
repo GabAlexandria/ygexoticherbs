@@ -8,7 +8,7 @@ body {
     color: #333;
     width: 1000px;
     div.search {
-      margin-left: 70px;
+      margin-left: 78px;
       form input {
         height: 20px;
         font-size: 15px;
@@ -39,8 +39,8 @@ body {
     h1 { text-align: center }
     table.product-summary {
       float: left;
-      width: 400px;
-      margin-left: 70px;
+      width: 380px;
+      margin-left: 78px;
       margin-bottom: 20px;
       border-color: green;
       tbody {
@@ -60,9 +60,9 @@ body {
       }
       tbody tr td {
         p {
-          height: 5px;
+          height: 35px;
           padding-left: 5px;
-          margin-top: 5px;
+          margin-top: 1px;
         }
         b {
           padding-left: 5px;
@@ -100,6 +100,41 @@ body {
             td {
               width: 200px;
             }
+          }
+        }
+      }
+    }
+    form.formtastic.product {
+      fieldset {
+        border-style: none;
+        list-style-type: none;
+        ol li {
+          width: 200px;
+          display: block;
+          margin-bottom: 10px;i
+          label {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+    div.index_products {
+      margin-left: 50px;
+      table {
+        margin-top: 20px;
+        border-color: green;
+        tbody tr {
+          text-align: center;
+          td.parent {
+            width: 200px;
+            //text-align: center;
+            //border: 1px solid green;
+          }
+          td.name {
+            width: 150px;
+          }
+          td.price {
+            width: 80px;
           }
         }
       }

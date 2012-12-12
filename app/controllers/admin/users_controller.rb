@@ -18,11 +18,26 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def create
-    @user = User.new(params[:admin_user])
+    @user = User.new(params[:user])
+    if @user.save
+      flash[:notice] = "A new user has been created"
+      redirect_to admin_users_path
+    else
+      flash[:error] = "There was a problem"
+      render :action => :new
+    end
   end
 
   def update
     @user = User.find(params[:id])
+    @user.attributes = params[:user]
+    if @user.save
+      flash[:notice] = "The user has been updated"
+      redirect_to admin_users_path
+    else
+      flash[:error] = "There was a problem"
+      render :action => :edit
+    end
   end
 
   def destroy
