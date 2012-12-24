@@ -19,7 +19,8 @@ class Product < ActiveRecord::Base
 
 
   def truncated_descript
-    (description.split[0..11].join(" ") + "...")
+    stripped_descrip = Sanitize.clean(description.strip, Sanitize::Config::RESTRICTED).split
+    (stripped_descrip.length > 12) ? (stripped_descrip[0..11].join(" ") + "...") : stripped_descrip.join(" ")
   end
 
   def self.search(search)
