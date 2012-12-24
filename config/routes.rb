@@ -8,10 +8,9 @@ Ygexoticherbs::Application.routes.draw do
   resources :users, :only => [:new, :edit, :create, :update]
   resources :user_sessions
   resources :products, :only => [:index, :show]
+  resources :user_email, :only => [:new, :create]
 
 
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
   root :to => "pages#welcome"
   get "/home" => "pages#welcome", :as => "welcome"
   
@@ -20,6 +19,7 @@ Ygexoticherbs::Application.routes.draw do
   get "/about-us" => "pages#about_us", :as => "about_us"
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
