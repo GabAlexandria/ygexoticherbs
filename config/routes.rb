@@ -1,6 +1,14 @@
 Ygexoticherbs::Application.routes.draw do
 
   namespace :admin do
+    resources :orders
+  end
+
+
+  resources :orders
+
+
+  namespace :admin do
     resources :products
     resources :users
   end
