@@ -1,5 +1,7 @@
 body {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 16px;
+  color: #333;
   img.bg {
     min-height: 100%;
     min-width: 1024px;
@@ -8,6 +10,18 @@ body {
     position: fixed;
     top:0;
     left: 0;
+  }
+  div.flash {
+    position: relative;
+    text-align: center;
+    height: 35px;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    font-size: 18px;
+    &.flash_notice {
+      background: #ccffcc;
+      border: 1px solid #68cd68; 
+    }
   }
   section {
     position: relative;
