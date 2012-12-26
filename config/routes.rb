@@ -11,6 +11,8 @@ Ygexoticherbs::Application.routes.draw do
   namespace :admin do
     resources :products
     resources :users
+    resources :carts
+    resources :orders
   end
 
   resources :users, :only => [:new, :edit, :create, :update]
