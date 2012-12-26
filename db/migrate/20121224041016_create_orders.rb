@@ -11,6 +11,7 @@ class CreateOrders < ActiveRecord::Migration
       t.string :province
       t.string :zip_code
       t.integer :quantity
+      t.integer :cart_id
       t.timestamps
     end
   end

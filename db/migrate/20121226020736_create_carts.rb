@@ -11,6 +11,7 @@ class CreateCarts < ActiveRecord::Migration
       t.string :zip_code
       t.string :telephone_number
       t.integer :cart_quantity, :null => false, :default => 0
+      t.integer :user_id
       t.timestamps
     end
   end
