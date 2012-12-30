@@ -20,7 +20,15 @@ body {
     font-size: 18px;
     &.flash_notice {
       background: #ccffcc;
-      border: 1px solid #68cd68; 
+      border: 1px solid #68cd68;
+    }
+    &.flash_error {
+      background: #FFCCCC;
+      border: 2px solid #cc0000;
+    }
+    &.flash_warning {
+      background: #ffe;
+      border: 1px solid #ff0;
     }
   }
   section {
@@ -50,5 +58,9 @@ body {
     color: green;
     text-decoration: none;
     &:hover { text-decoration: underline; }
+  }
+  p.inline-errors {
+    border: 1px solid #cc0000;
+    background: #FFCCCC;
   }
 }

@@ -1,5 +1,11 @@
 Ygexoticherbs::Application.routes.draw do
 
+  resources :mailing_lists
+
+
+  resources :orders
+  resources :carts
+
   namespace :admin do
     resources :orders
   end
