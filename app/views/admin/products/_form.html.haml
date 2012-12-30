@@ -6,8 +6,8 @@
   = f.input :quantity
   = f.input :packaging_type
   = f.input :parent_id, :as => :select, :collection => options_from_collection_for_select(Product.roots, 'id', 'name', product.ancestry)
-  = f.text_area :description, :class => 'ckeditor', :label => "Description"
+  = f.input :description, :as => :text, :input_html => { :class => 'ckeditor' }, :label => "Description"
   %br
-  = f.text_area :recommendations, :class => 'ckeditor', :label => "Recipe"
+  = f.input :recommendations, :as => :text, :input_html => { :class => 'ckeditor' }, :label => "Recommendations"
   = f.input :available, :as => :boolean
   = f.input :in_stock, :as => :boolean

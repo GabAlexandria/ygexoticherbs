@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
   # attr_accessible :title, :body
+
+  acts_as_taggable
   has_ancestry :orphan_strategy => :rootify
 
   attr_accessible :name,
