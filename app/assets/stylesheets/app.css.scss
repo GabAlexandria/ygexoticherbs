@@ -63,4 +63,38 @@ body {
     border: 1px solid #cc0000;
     background: #FFCCCC;
   }
+  .ui-dialog {
+    //font-family: "Trebuchet MS", Helvetica, sans-serif;
+    //font-size: 20px;
+    border: 5px solid green;
+    border-radius: 20px;
+    text-align: center;
+    .ui-dialog-titlebar {
+      width: 5px;
+      float: right;
+    }
+    .mailing_list_modal {
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      font-size: 20px;
+      color: #333;
+      //list-style-type: none;
+      form fieldset {
+        border: none;
+        li {
+          margin-bottom: 20px;
+          list-style-type: none;
+          label {
+            margin-right: 10px;
+          }
+          input {
+            border-radius: 20px;
+          }
+        }
+      }
+      h2 {
+        height: 50px;
+        margin-top: 0px;
+      }
+    }  
+  }
 }

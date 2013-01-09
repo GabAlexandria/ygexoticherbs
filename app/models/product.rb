@@ -19,6 +19,8 @@ class Product < ActiveRecord::Base
   validates_presence_of :name, :message => "Please enter a name"
   validates_presence_of :slug, :message => "Please enter a slug"
 
+  has_many :orders
+
 
   def truncated_descript
     stripped_descrip = Sanitize.clean(description.strip, Sanitize::Config::RESTRICTED).split
