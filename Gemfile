@@ -54,4 +54,4 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem 'therubyracer'
+gem 'therubyracer', '0.10.2'

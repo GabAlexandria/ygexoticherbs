@@ -20,6 +20,9 @@ Ygexoticherbs::Application.routes.draw do
   get "/about-us" => "pages#about_us", :as => "about_us"
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
+  # The priority is based upon order of creation:
+  # first created -> highest priority.
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
