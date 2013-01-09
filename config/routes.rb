@@ -1,17 +1,18 @@
 Ygexoticherbs::Application.routes.draw do
 
-  resources :mailing_lists
+  resources :mailing_lists, :only => [:create]
+  get "/name_and_email" => "mailing_lists#new", :as => "name_and_email"
 
-
-  resources :orders
-  resources :carts
-
-  namespace :admin do
-    resources :orders
+  #resources :orders, :only => [:new, :create, :edit, :update]
+  resources :carts, :only => [:new, :create, :edit, :update] do 
+    member do
+      get :enter_email
+      post :enter_email
+      get :confirm_orders
+      post :confirm_orders
+      get :thanks_for_order
+    end
   end
-
-
-  resources :orders
 
 
   namespace :admin do

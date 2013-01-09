@@ -20,4 +20,7 @@ class User < ActiveRecord::Base
   validates_length_of :password, :in => 6..100, :message => "Your password must be longer than 6 characters long"
 
   validates_presence_of :password_confirmation, :message => "Please confirm your password"
+
+  has_many :carts
+  has_many :orders
 end

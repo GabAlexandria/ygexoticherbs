@@ -1,0 +1,11 @@
+.mailing_list_modal{:id => "list_modal"}
+  %h2= "Enter your email below to receive updates on new stock and amazing offers"
+  = semantic_form_for MailingList.new, :url => mailing_lists_path do |f|
+    = f.inputs do
+      = f.input :name
+      = f.input :email
+
+      = f.input :receives_emails, :as => :boolean, :label => "I would like to receive regular email updates about new product arrivals and exciting deals."
+    = f.buttons do
+      = f.commit_button "Submit"
+
