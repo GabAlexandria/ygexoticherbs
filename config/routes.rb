@@ -4,13 +4,16 @@ Ygexoticherbs::Application.routes.draw do
   get "/name_and_email" => "mailing_lists#new", :as => "name_and_email"
 
   #resources :orders, :only => [:new, :create, :edit, :update]
-  resources :carts, :only => [:new, :create, :edit, :update] do 
+  resources :carts, :only => [:new, :create, :edit, :update] do
     member do
-      get :enter_email
-      post :enter_email
       get :confirm_orders
       post :confirm_orders
       get :thanks_for_order
+    end
+
+    collection do
+      get :sign_in
+      post :sign_in
     end
   end
 

@@ -16,6 +16,7 @@ class MailingListsController < ApplicationController
         flash[:notice] = "Hooray! You have been added to our mailing list"
       else
       end
+      cookies[:seen_modal] = true
       redirect_to products_path
     else
       flash[:error] = "An error has occurred."

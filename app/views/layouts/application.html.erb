@@ -23,12 +23,15 @@
 <body>
   <%= image_tag("background.jpeg", :class => "bg") %>
   <%= show_flash %>
+  <% unless cookies[:seen_modal] %>
   <%= render :partial => "misc/mailing_list_modal" %>
+  <% end %>
   <div id="top-navbar" class="navbar">
     <ul>
       <li> <%= link_to "Home", welcome_path %> </li>
       <li class="products"> <%= link_to "Products", products_path %> </li>
       <li> <%= link_to "Contact Us", contact_us_path %> </li>
+      <%#<li> <%= link_to "Place an Order", sign_in_carts_path %> </li>
       <%# <li> <%= link_to "About Us", about_us_path %> </li>
       <% if current_user.present? && current_user.admin %>
       <li> <%= link_to "Edit Products", admin_products_path %> </li>
