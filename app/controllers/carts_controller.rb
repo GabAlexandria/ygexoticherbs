@@ -1,8 +1,10 @@
 class CartsController < ApplicationController
 
+  before_filter :require_login #, :except => [:sign_in]
+
   def sign_in
     @user_session = UserSession.new
-    logger.debug ["XXXXXXX"] << params[:product_id]
+    #logger.debug ["XXXXXXX"] << params[:product_id]
     if request.post?
       @user_session = UserSession.new(params[:user_session])
       if @user_session.save
@@ -37,4 +39,14 @@ class CartsController < ApplicationController
   def thanks_for_order
   end
 
+
+  protected
+
+  def require_login
+    unless current_user
+      flash[:error] = "You must be logged in to access this page"
+      redirect_to products_path
+      #redirect_to sign_in_carts_path
+    end 
+  end
 end

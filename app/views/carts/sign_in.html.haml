@@ -2,7 +2,7 @@
 
   %h1= "You must be signed in to place an order"
   .sign-in
-    = semantic_form_for @user_session, :url => sign_in_carts_path(:product_id => @product_id) do |f|
+    = semantic_form_for @user_session, :url => sign_in_carts_path do |f|
       = f.inputs do
         = f.input :username
         = f.input :password

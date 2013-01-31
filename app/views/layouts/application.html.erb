@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Welcome</title>
+  <title> <%= @browser_title || "YG Exotic Herbs and Spices" %> </title>
   <%= favicon_link_tag %>
   <%= stylesheet_link_tag    "application", controller.controller_name %>
   <%= javascript_include_tag "application", controller.controller_name %>
@@ -23,9 +23,9 @@
 <body>
   <%= image_tag("background.jpeg", :class => "bg") %>
   <%= show_flash %>
-  <% unless cookies[:seen_modal] %>
-  <%= render :partial => "misc/mailing_list_modal" %>
-  <% end %>
+  <%# unless cookies[:seen_modal] %>
+  <%#= render :partial => "misc/mailing_list_modal" %>
+  <%# end %>
   <div id="top-navbar" class="navbar">
     <ul>
       <li> <%= link_to "Home", welcome_path %> </li>

@@ -21,6 +21,9 @@ class Product < ActiveRecord::Base
 
   has_many :orders
 
+  def to_param
+    "#{id}-#{name.downcase.split.join("-")}"
+  end
 
   def truncated_descript
     stripped_descrip = Sanitize.clean(description.strip, Sanitize::Config::RESTRICTED).split
