@@ -1,8 +1,8 @@
 %section
 
-  %h1= "You must be signed in to place an order"
+  %h1.must-sign-in= "You must be signed in to place an order"
   .sign-in
-    = semantic_form_for @user_session, :url => sign_in_carts_path do |f|
+    = semantic_form_for @user_session, :url => sign_in_carts_path(:product_id => params[:product_id]) do |f|
       = f.inputs do
         = f.input :username
         = f.input :password

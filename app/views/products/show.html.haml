@@ -33,5 +33,5 @@
             %td.price= number_to_currency(prod.price)
             %td
               %b= (prod.in_stock ? "In Stock" : "Out of Stock")
-            -#%td= link_to (current_user.blank? ? "Order Now" : "Add to Cart"), sign_in_carts_path(:product_id => prod.id)
+            -# %td= link_to (current_user.blank? ? "Order Now" : "Add to Cart"), sign_in_carts_path(:product_id => prod.id)
             

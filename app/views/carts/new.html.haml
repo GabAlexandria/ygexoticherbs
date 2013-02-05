@@ -1,1 +1,23 @@
-= params[:product_id]
+%section
+  %h1= "Create your order"
+
+  .order-creation
+    = semantic_form_for @cart do |f|
+      .product-info
+        = image_tag("coming-soon-full.png", :class => "coming-soon-cart")
+        %h3= "Product: #{@product.name} (#{@product.packaging_type})"
+        %h3= "Price: #{number_to_currency(@product.price)}"
+        = f.semantic_fields_for @order do |order_form|
+          = order_form.input :quantity, :input_html => {:id => "quantity-spinner"}
+      .customer-info
+        = f.inputs do
+          = f.input :address1
+          = f.input :address2
+          = f.input :province
+          = f.input :zip_code
+          = f.input :telephone_number
+          = f.input :product_id, :value => params[:product_id], :as => :hidden
+      .next-step
+        = f.buttons do
+          = f.commit_button "Go To Step Three"
+        
