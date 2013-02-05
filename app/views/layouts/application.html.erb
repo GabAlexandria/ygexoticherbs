@@ -23,9 +23,9 @@
 <body>
   <%= image_tag("background.jpeg", :class => "bg") %>
   <%= show_flash %>
-  <% unless cookies[:seen_modal] %>
-  <%= render :partial => "misc/mailing_list_modal" %>
-  <% end %>
+  <%# unless cookies[:seen_modal] %>
+  <%#= render :partial => "misc/mailing_list_modal" %>
+  <%# end %>
   <div id="top-navbar" class="navbar">
     <ul>
       <li> <%= link_to "Home", welcome_path %> </li>
