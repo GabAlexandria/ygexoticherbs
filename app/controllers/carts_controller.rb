@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
 
-  before_filter :require_login #, :except => [:sign_in]
+  before_filter :require_login, :except => [:sign_in]
 
   def sign_in
     @user_session = UserSession.new
@@ -68,10 +68,10 @@ class CartsController < ApplicationController
   protected
 
   def require_login
-    unless current_user && current_user.admin
+    unless current_user #&& current_user.admin
       flash[:error] = "You must be logged in to access this page"
-      redirect_to products_path
-      #redirect_to sign_in_carts_path
+      #redirect_to products_path
+      redirect_to sign_in_carts_path
     end 
   end
 end

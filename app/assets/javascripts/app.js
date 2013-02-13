@@ -1,5 +1,5 @@
 $(function() {
-  $( "#list_modal" ). dialog ({
+  $( "#list_modal" ).dialog ({
       resizable: false,
       draggable: false,
       height: 450,

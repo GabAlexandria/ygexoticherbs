@@ -8,18 +8,21 @@ section.carts {
   form fieldset {
     border: none;
   }
-  fieldset.inputs {
-    li {
-      display: block;
-      margin-bottom: 15px;
-      width: 300px;
-      label {
-        font-size: 18px;
-      }
-      input {
-        height: 28px;
-        width: 250px;
-        font-size: 18px;
+  form fieldset.inputs {
+    ol {
+      li {
+        display: block;
+        margin-bottom: 15px;
+        width: 300px;
+        label {
+          font-size: 18px;
+          width: 300px;
+        }
+        input {
+          height: 28px;
+          width: 250px;
+          font-size: 18px;
+        }
       }
     }
   }
@@ -29,6 +32,9 @@ section.carts {
   .sign-in {
     text-align: center;
     margin-top: 50px;
+    li {
+      text-align: center;
+    }
   }
   .order-creation {
     list-style: none;
